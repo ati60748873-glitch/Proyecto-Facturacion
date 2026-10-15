@@ -13,3 +13,8 @@ def test_descuento_regular_alto():
 def test_validador_monto_negativo_falla():
     # Un monto negativo no debe ser permitido por la regla del negocio
     assert validar_numero_positivo("-50.5") == False
+
+
+def test_descuento_vip_alto():
+    # Cliente VIP gasta más de S/500: debe recibir 15% de descuento
+    assert calcular_descuento(1000.0, "VIP") == 150.0
